@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Score_LifeDataSO currentHealth;
     [SerializeField] private PaletteSO paletteColor;
     private DynamicObjectPool bulletPool;
+    [SerializeField]private AudioSource _audioBoom;
     void Start()
     {
         bulletPool = gameObject.AddComponent<DynamicObjectPool>();
@@ -68,9 +69,13 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Jugador destruido");
+        _audioBoom.Play();
+        currentHealth.CheckAndSetHighScore(); // Usa el método corregido
+
         SceneGlobalManager.OnShowResults?.Invoke();
         Time.timeScale = 0f;
     }
+
 
     void Shoot()
     {

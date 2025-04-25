@@ -13,6 +13,8 @@ public class SceneGlobalManager : MonoBehaviour
     public static Action OnShowResults;
     public static Action OnUnloadGameAndResults;
 
+    [SerializeField] private float splashDuration = 2f; // Duración del splash
+
     private void Awake()
     {
         if (Instance == null)
@@ -25,12 +27,18 @@ public class SceneGlobalManager : MonoBehaviour
             OnShowResults += SceneLoader.ShowResults;
             OnUnloadGameAndResults += SceneLoader.UnloadGameAndResults;
 
-            SceneManager.LoadScene("MenuStart");
+            StartCoroutine(WaitAndLoadMenu());
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator WaitAndLoadMenu()
+    {
+        yield return new WaitForSeconds(splashDuration);
+        SceneManager.LoadScene("MenuStart");
     }
 
     private void OnDestroy()
@@ -40,4 +48,5 @@ public class SceneGlobalManager : MonoBehaviour
         OnUnloadGameAndResults -= SceneLoader.UnloadGameAndResults;
     }
 }
+
 

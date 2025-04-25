@@ -23,9 +23,18 @@ public class Score_LifeDataSO : ScriptableObject
 
     public void CheckAndSetHighScore()
     {
-        if (currentScore > highScore)
+        int puntuacionGuardada = PlayerPrefs.GetInt("PuntuacionMaxima", 0);
+
+        if (currentScore > puntuacionGuardada)
         {
             highScore = currentScore;
+            PlayerPrefs.SetInt("PuntuacionMaxima", currentScore);
+            PlayerPrefs.Save(); // Muy importante guardar
+        }
+        else
+        {
+            highScore = puntuacionGuardada;
         }
     }
+
 }
