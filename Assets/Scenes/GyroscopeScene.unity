@@ -626,10 +626,10 @@ GameObject:
   m_Component:
   - component: {fileID: 811633246}
   - component: {fileID: 811633245}
-  - component: {fileID: 811633244}
   - component: {fileID: 811633243}
   - component: {fileID: 811633242}
   - component: {fileID: 811633247}
+  - component: {fileID: 811633248}
   m_Layer: 0
   m_Name: PL
   m_TagString: Player
@@ -702,21 +702,6 @@ MonoBehaviour:
   currentHealth: {fileID: 11400000, guid: ce0449d29c2f0774bae8f3a5012f579d, type: 2}
   paletteColor: {fileID: 11400000, guid: b4cd7f311321b1f478626bd0b77606d1, type: 2}
   _audioBoom: {fileID: 1961599907}
---- !u!114 &811633244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811633241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7ad8bd32442dd4aa014ff47af8b6bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedShipData: {fileID: 11400000, guid: df0a9f16ee966a24db740cafb8c64d1f, type: 2}
-  maxYPosition: 5
-  minYPosition: -5
 --- !u!212 &811633245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -781,7 +766,7 @@ Transform:
   m_GameObject: {fileID: 811633241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.31, y: 0.5, z: 0}
+  m_LocalPosition: {x: -4.78, y: 0.5, z: 0}
   m_LocalScale: {x: 1.4369085, y: 1.4369085, z: 1.4369085}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -886,6 +871,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &811633248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811633241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ba3345aab565a4f88c72e3a4d5f2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedShipData: {fileID: 11400000, guid: df0a9f16ee966a24db740cafb8c64d1f, type: 2}
+  minXPosition: -5
+  maxXPosition: 5
+  minYPosition: -5
+  maxYPosition: 5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
