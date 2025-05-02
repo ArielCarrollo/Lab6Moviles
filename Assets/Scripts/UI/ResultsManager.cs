@@ -14,7 +14,7 @@ public class ResultsManager : MonoBehaviour
         finalscore.CheckAndSetHighScore(); // Actualiza antes de mostrar
 
         finalscoretxt.color = paletteColor.color;
-
+        NotificationSimple.Instance.SendNotification("¡Rodan terminada!", "Puntaje actual: " + finalscore.currentScore, 0);
         currentscoretxt.text = "Current Score: " + finalscore.currentScore;
         finalscoretxt.text = "High Score: " + finalscore.highScore;
     }

@@ -30,6 +30,7 @@ public class Score_LifeDataSO : ScriptableObject
             highScore = currentScore;
             PlayerPrefs.SetInt("PuntuacionMaxima", currentScore);
             PlayerPrefs.Save(); // Muy importante guardar
+            NotificationSimple.Instance.SendHighScoreNotification("¡Superaste tu puntaje!", "Nuevo puntaje máximo: " + highScore, 0);
         }
         else
         {

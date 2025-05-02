@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Jugador destruido");
         _audioBoom.Play();
-        currentHealth.CheckAndSetHighScore(); // Usa el método corregido
+        currentHealth.CheckAndSetHighScore();
 
         SceneGlobalManager.OnShowResults?.Invoke();
         Time.timeScale = 0f;
